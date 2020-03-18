@@ -8,7 +8,7 @@ import numpy as np
 import xarray as xr
 import pandas as pd 
 import datetime 
-#import seaborn as sns
+import seaborn as sns
 import datetime as dt
 from scipy.optimize import least_squares
 
@@ -81,7 +81,7 @@ toga_means = toga_means.drop('GGALT').drop('GGLAT').drop('GGLON')
 #toga_means.index.name = "Trace_Gas"
 toga_means = toga_means.reset_index()
 toga_means = toga_means.rename(columns={'index': 'Trace_Gas'})
-
+toga_means.to_pickle("./toga_means.pkl")
 
 # In[5]:
 
@@ -177,6 +177,7 @@ awas_means['BL - RF14'] = awas_df.loc[(awas_df['GGALT'] < 2000) & (awas_df['Flig
 #toga_means = toga_means.transpose()
 awas_means.index.name = "Trace_Gas"
 awas_means = awas_means.drop('GGALT').drop('GGLAT').drop('GGLON')
+awas_means.to_pickle("./awas_means.pkl")
 
 # ratios for 1) flights in total and 2) individual flights 
 awas_ratios = pd.DataFrame()
