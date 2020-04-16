@@ -131,6 +131,10 @@ for ii in toga_trc.data_vars:
 # pickle it! 
 toga_df.to_pickle("./toga_data_df.pkl")
 
+######### save version with only south of 25 N 
+toga_df_twp = toga_df[toga_df['GGLAT'] < 25]
+toga_df_twp.to_pickle("./toga_data_df_twp.pkl")
+
 ################# -------------------- AWAS  -------------------- #################
 # AWAS - sort flights dates into flight names and notes (from Pan, BAMS 2017) for adding to dataframe 
 myflights = []
@@ -232,3 +236,6 @@ for ii in awas_trc.data_vars:
 # pickle it! 
 awas_df.to_pickle("./awas_data_df.pkl")
 
+# save version with only data south of 25 N 
+awas_df_twp = awas_df[awas_df['GGLAT'] < 25]
+awas_df_twp.to_pickle("./awas_data_df_twp.pkl")
