@@ -29,7 +29,7 @@ tau = ratios_sort['TROPO_tau']
 
 # drop uncecessary columns 
 ratios_sort = ratios_sort.drop(columns = ['Instrument', 'BL_tau', 'TROPO_tau', 'UT_tau'])
-ratios_sort
+ratios_sort.to_pickle('./ratios_sort_tropotau_twp.pkl')
 
 ############################ GET TTS OUTPUTS FOR EA. CASE ############################
 # --------------- test with a few seg 

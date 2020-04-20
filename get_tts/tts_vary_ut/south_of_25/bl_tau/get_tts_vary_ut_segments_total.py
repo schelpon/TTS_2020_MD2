@@ -31,6 +31,8 @@ tau = ratios_sort['BL_tau']
 ratios_sort = ratios_sort.drop(columns = ['Instrument', 'BL_tau', 'TROPO_tau', 'UT_tau'])
 ratios_sort
 
+ratios_sort.to_pickle('./ratios_sort_bltau_twp.pkl')
+
 ############################ GET TTS OUTPUTS FOR EA. CASE ############################
 # --------------- test with a few seg 
 # save outputs to plot later 
